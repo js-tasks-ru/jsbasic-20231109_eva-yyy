@@ -8,9 +8,18 @@ function print(text) {
 /**
  * Эту функцию нужно поменять так,
  * чтобы функция sayHello работала корректно
+ * @param {string | null} name
+ * @returns {boolean}
  */
 function isValid(name) {
-  // ваш код...
+
+  if (name == null) {
+    return false;
+  }
+
+  const trimmedName = name.trim();
+
+  return trimmedName.length >= 4 && !trimmedName.includes(' ');
 }
 
 function sayHello() {
@@ -22,3 +31,5 @@ function sayHello() {
     print('Некорректное имя');
   }
 }
+
+sayHello();
